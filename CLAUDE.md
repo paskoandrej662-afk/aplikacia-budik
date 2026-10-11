@@ -72,7 +72,7 @@ dokumenty/         – texty pre Google Play, vysvetlenia oprávnení       [fá
 
 ## Príkazy
 
-Server beží online na **supabase.com** (projekt na vývoj). Docker ani miestny server nepoužívame. Príkazy v priečinku `server/`:
+Server beží online na **supabase.com**, projekt na vývoj `weup-vyvoj` (kód `yoojmhtbtrsaonkphdvs`, región Frankfurt). Miestny server v Dockeri nepoužívame. Výnimka: `npm run testy` si na chvíľu stiahne malý testovací nástroj cez Docker (neskôr presunieme testy na GitHub). V PowerShelli na Windowse treba písať `npm.cmd` / `npx.cmd` (obyčajné `npm` Windows blokuje). Príkazy v priečinku `server/`:
 
 | Príkaz | Čo robí |
 |---|---|
@@ -87,7 +87,7 @@ Server beží online na **supabase.com** (projekt na vývoj). Docker ani miestny
 
 | Fáza | Obsah | Stav |
 |---|---|---|
-| 1 | Kostra projektu, server, prihlásenie (e-mail, Google, Apple) | **prebieha** – databáza napísaná (profily, súhlasy, zariadenia); čaká sa na projekt na supabase.com a Android Studio |
+| 1 | Kostra projektu, server, prihlásenie (e-mail, Google, Apple) | **prebieha** – databáza online (profily, súhlasy, zariadenia), 7 testov prechádza; čaká sa na Android Studio |
 | 2 | Budík cez celú obrazovku + opakované zvonenie + dôkaz QR kódom | čaká |
 | 3 | Peňaženka, Stripe (test), stávky, kniha pohybov, rozhodovanie servera | čaká |
 | 4 | Fotka predmetu s AI, drepy, Strážca | čaká |

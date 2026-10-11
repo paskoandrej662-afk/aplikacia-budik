@@ -1,6 +1,11 @@
 -- Testy fázy 1: profil vznikne pri registrácii a cudzí profil nie je vidieť ani meniť.
 begin;
+-- Testy bežia ako správca databázy (aj keď ich spúšťa dočasný účet nástroja Supabase).
+set local role postgres;
 create extension if not exists pgtap with schema extensions;
+-- Nástroj na testy (pgTAP) môže byť v inej schéme, preto ju pridáme do cesty hľadania.
+select set_config('search_path', current_setting('search_path') || ', ' || n.nspname, true)
+  from pg_extension e join pg_namespace n on n.oid = e.extnamespace where e.extname = 'pgtap';
 select plan(7);
 
 -- Dvaja skúšobní používatelia.
@@ -24,7 +29,7 @@ set local request.jwt.claims = '{"sub": "11111111-1111-1111-1111-111111111111", 
 select is((select count(*) from public.profily)::int, 1, 'Anna vidí iba svoj profil');
 
 update public.profily set meno = 'Hacker' where id = '22222222-2222-2222-2222-222222222222';
-reset role;
+set local role postgres;
 select is(
   (select meno from public.profily where id = '22222222-2222-2222-2222-222222222222'),
   null, 'Anna nezmení cudzí profil');
