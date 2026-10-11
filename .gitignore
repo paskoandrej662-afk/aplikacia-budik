@@ -1,0 +1,23 @@
+# Knižnice stiahnuté cez npm
+node_modules/
+
+# Tajné kľúče a heslá – nikdy nepatria do repozitára
+.env
+.env.*
+!.env.priklad
+*.keystore
+*.jks
+google-services.json
+
+# Android: výstupy zostavenia a nastavenia Android Studia
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+captures/
+
+# Systémové súbory
+.DS_Store
+Thumbs.db

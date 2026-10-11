@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Farby pre ikonu a štart appky. Farby obrazoviek sú v jadro/dizajn/Farby.kt. -->
+<resources>
+    <color name="zelena">#20C965</color>
+    <color name="takmer_cierna">#0B0F0C</color>
+</resources>

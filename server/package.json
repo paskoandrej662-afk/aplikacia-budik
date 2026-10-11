@@ -1,0 +1,15 @@
+{
+  "name": "weup-server",
+  "private": true,
+  "description": "Server appky Weup (Supabase): databáza, prihlásenie, serverové funkcie",
+  "scripts": {
+    "prihlas": "supabase login",
+    "pripoj": "supabase link",
+    "nahraj-databazu": "supabase db push",
+    "testy": "supabase test db --linked",
+    "nahraj-funkcie": "supabase functions deploy"
+  },
+  "devDependencies": {
+    "supabase": "2.120.0"
+  }
+}

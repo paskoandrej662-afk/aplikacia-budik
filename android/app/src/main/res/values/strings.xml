@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Slovenské texty appky (hlavný jazyk). Čeština a angličtina pribudnú vo fáze 9. -->
+<resources>
+    <string name="nazov_appky">Weup</string>
+
+    <!-- Prihlásenie a registrácia -->
+    <string name="prihlasenie_nadpis">Vitaj späť</string>
+    <string name="prihlasenie_podnadpis">Prihlás sa a nastav si budík.</string>
+    <string name="registracia_nadpis">Vytvor si účet</string>
+    <string name="registracia_podnadpis">Pár sekúnd a môžeš začať vstávať načas.</string>
+    <string name="pole_meno">Meno</string>
+    <string name="pole_email">E-mail</string>
+    <string name="pole_heslo">Heslo</string>
+    <string name="heslo_zobrazit">Zobraziť</string>
+    <string name="heslo_skryt">Skryť</string>
+    <string name="tlacidlo_prihlasit">Prihlásiť sa</string>
+    <string name="tlacidlo_vytvorit_ucet">Vytvoriť účet</string>
+    <string name="prepnut_na_registraciu">Ešte nemáš účet? Zaregistruj sa</string>
+    <string name="prepnut_na_prihlasenie">Už máš účet? Prihlásiť sa</string>
+    <string name="alebo">alebo</string>
+    <string name="tlacidlo_google">Pokračovať cez Google</string>
+    <string name="info_potvrd_email">Poslali sme ti e-mail. Klikni na odkaz v ňom a potom sa prihlás.</string>
+
+    <!-- Chyby vo formulári -->
+    <string name="chyba_email_neplatny">Zadaj platný e-mail</string>
+    <string name="chyba_heslo_kratke">Heslo musí mať aspoň %1$d znakov</string>
+    <string name="chyba_meno_prazdne">Napíš, ako ťa máme volať</string>
+
+    <!-- Chyby zo servera -->
+    <string name="chyba_zle_udaje">Nesprávny e-mail alebo heslo</string>
+    <string name="chyba_ucet_existuje">Účet s týmto e-mailom už existuje. Prihlás sa.</string>
+    <string name="chyba_slabe_heslo">Heslo je príliš slabé. Skús dlhšie heslo aj s číslami.</string>
+    <string name="chyba_nepotvrdeny_email">Najprv potvrď svoj e-mail cez odkaz, ktorý sme ti poslali.</string>
+    <string name="chyba_vela_pokusov">Príliš veľa pokusov. Skús to o chvíľu.</string>
+    <string name="chyba_bez_internetu">Nepodarilo sa spojiť so serverom. Skontroluj internet.</string>
+    <string name="chyba_google">Prihlásenie cez Google sa nepodarilo.</string>
+    <string name="chyba_neznama">Niečo sa pokazilo. Skús to znova.</string>
+
+    <!-- Domov (dočasná obrazovka po prihlásení) -->
+    <string name="domov_pozdrav">Ahoj, %1$s!</string>
+    <string name="domov_pozdrav_bez_mena">Ahoj!</string>
+    <string name="domov_text">Si prihlásený. Budíky pribudnú v ďalšej fáze.</string>
+    <string name="tlacidlo_odhlasit">Odhlásiť sa</string>
+</resources>
