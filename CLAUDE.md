@@ -97,7 +97,7 @@ Java sa berie z Android Studia: `JAVA_HOME=C:\Program Files\Android\Android Stud
 
 ### Kde čo beží (majiteľ má slabý počítač s Windows, 8 GB pamäte)
 - Počítač majiteľa slúži iba na rozhovor a odosielanie kódu. Android Studio, emulátor ani Docker sa nepoužívajú.
-- Zostavenie appky a testy robí **GitHub Actions** (). Hotová appka (APK) je pri každom behu v časti Artifacts.
+- Zostavenie appky a testy robí **GitHub Actions** (`.github/workflows/android.yml`). Hotová appka (APK) je pri každom behu v časti Artifacts.
 - Skúšanie naživo: na Android mobile cez **Firebase App Distribution** (pripravuje sa), občas káblom.
 - **iPhone verzia je odložená:** majiteľ zatiaľ nechce platený účet Apple Developer. Majiteľ má iPhone 11 (podporuje iOS 26). Keď sa k nej vrátime, zostavovať sa bude na GitHube (macOS) a skúšať cez TestFlight, Mac netreba.
 
