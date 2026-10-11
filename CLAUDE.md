@@ -72,21 +72,22 @@ dokumenty/         – texty pre Google Play, vysvetlenia oprávnení       [fá
 
 ## Príkazy
 
-Server (v priečinku `server/`, musí bežať Docker Desktop):
+Server beží online na **supabase.com** (projekt na vývoj). Docker ani miestny server nepoužívame. Príkazy v priečinku `server/`:
 
 | Príkaz | Čo robí |
 |---|---|
 | `npm install` | stiahne nástroje servera (raz) |
-| `npm run spusti` | spustí server v počítači |
-| `npm run obnov-databazu` | zmaže miestnu databázu a vytvorí ju znova zo súborov v `migrations/` |
-| `npm run testy` | spustí testy databázy |
-| `npm run zastav` | zastaví server |
+| `npm run prihlas` | prihlási nástroje do účtu Supabase (raz, otvorí prehliadač) |
+| `npm run pripoj -- --project-ref <kód projektu>` | prepojí priečinok s projektom na supabase.com (raz) |
+| `npm run nahraj-databazu` | nahrá nové súbory z `migrations/` do databázy online |
+| `npm run testy` | spustí testy databázy na online projekte (testy po sebe všetko vrátia späť) |
+| `npm run nahraj-funkcie` | nahrá serverové funkcie |
 
 ## Stav fáz
 
 | Fáza | Obsah | Stav |
 |---|---|---|
-| 1 | Kostra projektu, server, prihlásenie (e-mail, Google, Apple) | **prebieha** – server založený (profily, súhlasy, zariadenia); čaká sa na Android Studio |
+| 1 | Kostra projektu, server, prihlásenie (e-mail, Google, Apple) | **prebieha** – databáza napísaná (profily, súhlasy, zariadenia); čaká sa na projekt na supabase.com a Android Studio |
 | 2 | Budík cez celú obrazovku + opakované zvonenie + dôkaz QR kódom | čaká |
 | 3 | Peňaženka, Stripe (test), stávky, kniha pohybov, rozhodovanie servera | čaká |
 | 4 | Fotka predmetu s AI, drepy, Strážca | čaká |
