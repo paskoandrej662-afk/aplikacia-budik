@@ -65,10 +65,12 @@ administracia/     – webová administrácia pre majiteľa                [fáz
 dokumenty/         – texty pre Google Play, vysvetlenia oprávnení       [fáza 10]
 ```
 
-### Android (plán)
-- Moduly: `app/` (spustenie a navigácia), `jadro/` (dizajn, model, server, lokálna databáza, texty), `funkcie/` (uvod, prihlasenie, budik, zvonenie, ulohy, zivyPanel, blokovanie, penazenka, seria, profil, widget).
+### Android
+- Zatiaľ jeden modul `app/`, vnútri rozdelený na balíky `jadro/` (dizajn, server) a `funkcie/` (prihlasenie, domov…). Na samostatné moduly ho rozdelíme, keď začne zostavovanie trvať dlho.
 - Každá obrazovka: `…Obrazovka.kt` iba kreslí, `…Riadic.kt` rozhoduje, čo sa zobrazí (testuje sa).
-- Minimálne Android 10, cieľový Android 16.
+- Spoločné časti (pripojenie na server, repozitáre) sa vytvárajú v `Zavislosti.kt`. Obrazovky pracujú s rozhraniami (napr. `PrihlasenieRepozitar`), aby ich testy vedeli nahradiť skúšobnými.
+- Adresa servera a jeho verejný kľúč sú v `android/server.properties`. Tajné kľúče v appke nikdy nie sú.
+- Minimálne Android 10, cieľový Android 16. Nástroje: Gradle 9.8.1, Android Gradle Plugin 9.4.1, Kotlin 2.4.21.
 
 ## Príkazy
 
@@ -83,11 +85,21 @@ Server beží online na **supabase.com**, projekt na vývoj `weup-vyvoj` (kód `
 | `npm run testy` | spustí testy databázy na online projekte (testy po sebe všetko vrátia späť) |
 | `npm run nahraj-funkcie` | nahrá serverové funkcie |
 
+Android (v priečinku `android/`, v PowerShelli):
+
+| Príkaz | Čo robí |
+|---|---|
+| `.\gradlew.bat assembleDebug` | zostaví appku (súbor `app/build/outputs/apk/debug/app-debug.apk`) |
+| `.\gradlew.bat testDebugUnitTest` | spustí testy logiky |
+| `.\gradlew.bat installDebug` | nainštaluje appku do zapnutého emulátora |
+
+Java sa berie z Android Studia: `JAVA_HOME=C:\Program Files\Android\Android Studio\jbr`. Emulátor zapína majiteľ v Android Studiu (Device Manager).
+
 ## Stav fáz
 
 | Fáza | Obsah | Stav |
 |---|---|---|
-| 1 | Kostra projektu, server, prihlásenie (e-mail, Google, Apple) | **prebieha** – databáza online (profily, súhlasy, zariadenia), 7 testov prechádza; čaká sa na Android Studio |
+| 1 | Kostra projektu, server, prihlásenie (e-mail, Google, Apple) | **prebieha** – server online (7 testov), Android appka s prihlásením a registráciou e-mailom (10 testov); chýba Google (projekt v Google Cloud) a Apple (neskôr) |
 | 2 | Budík cez celú obrazovku + opakované zvonenie + dôkaz QR kódom | čaká |
 | 3 | Peňaženka, Stripe (test), stávky, kniha pohybov, rozhodovanie servera | čaká |
 | 4 | Fotka predmetu s AI, drepy, Strážca | čaká |

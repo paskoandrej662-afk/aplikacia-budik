@@ -1,0 +1,5 @@
+# Konce riadkov: spúšťač pre Linux/Mac musí mať LF, pre Windows CRLF.
+* text=auto
+android/gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary

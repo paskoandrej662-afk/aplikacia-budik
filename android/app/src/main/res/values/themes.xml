@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vzhľad okna pri štarte appky (kým sa nenačíta prvá obrazovka). -->
+<resources>
+    <style name="Tema.Weup.Start" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/zelena</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ikona_popredie</item>
+        <item name="postSplashScreenTheme">@style/Tema.Weup</item>
+    </style>
+
+    <style name="Tema.Weup" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
